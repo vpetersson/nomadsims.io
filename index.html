@@ -58,21 +58,25 @@
     <!-- Populate the database -->
     <script>
     $.ajax({url: 'db.json',
-      success: function(data, success) {
-        for (var i=0, a=data; i < a.plans.length; i++) {
-            $('#simtable').append('<tr>'+
-                    '<td>' + a.plans[i].carrier+'</td>'+
-                    '<td>' + a.plans[i].plan+'</td>'+
-                    '<td>' + a.plans[i].country+'</td>'+
-                    '<td>' + a.plans[i].price+'</td>'+
-                    '<td>' + a.plans[i].bandwidth+'</td>'+
-                    '<td>' + a.plans[i].contract_terms+'</td>'+
-                    '<td>' + a.plans[i].comment+'</td>'+
-                    '</tr>');
-        }},
-      error: function() {
-        alert("Something went wrong!");
-      }
+        success: function(data, success) {
+            var sorter = function(a, b) {
+                return a.country.toUpperCase().localeCompare(b.country.toUpperCase());
+            }
+            data.plans.sort(sorter);
+            for (var i=0, a=data; i < a.plans.length; i++) {
+                $('#simtable').append('<tr>'+
+                        '<td>' + a.plans[i].carrier+'</td>'+
+                        '<td>' + a.plans[i].plan+'</td>'+
+                        '<td>' + a.plans[i].country+'</td>'+
+                        '<td>' + a.plans[i].price+'</td>'+
+                        '<td>' + a.plans[i].bandwidth+'</td>'+
+                        '<td>' + a.plans[i].contract_terms+'</td>'+
+                        '<td>' + a.plans[i].comment+'</td>'+
+                        '</tr>');
+            }},
+        error: function() {
+            alert("Something went wrong!");
+        }
     });
     </script>
   </body>
