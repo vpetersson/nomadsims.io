@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>SIM Database for Digital Nomads</title>
+    <title>NomadSIMs.io</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -29,10 +29,10 @@
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1>Digital Nomads' SIM Card Database</h1>
+        <h1>Nomadsims.io: A crowd sourced SIM card database.</h1>
       </div>
       <p class="lead">Digital nomad traveling the world knows that roaming is for rookies. Real digital nomads use local SIM cards.</p>
-      <p>The goal of this page is to create a crowd sourced database of the best (and worst) pre-paid SIM cards. To contribute, please open a Github Pull request.</p>
+      <p>The goal of this page is to create a crowd sourced database of the best (and worst) pre-paid SIM cards. To contribute, please check out the <a href="https://github.com/vpetersson/nomadsims.io">Github repo</a> and opena a Pull Request.</p>
       <table class="table table-hover">
       <thead>
         <tr>
@@ -49,13 +49,13 @@
 
     <div class="footer">
       <div class="container">
-        <p class="text-muted">&copy; <a href="http://viktorpetersson.com">Viktor Petersson</a>.</p>
+        <p class="text-muted">&copy; Nomadsims.io, by <a href="http://viktorpetersson.com">Viktor Petersson</a>.</p>
       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script>
-$.ajax({url: '/simdb/db.json',
+$.ajax({url: 'db.json',
     success: function(data, success) {
         for (var i=0, a=data; i < a.plans.length; i++) {
             $('#simtable').append('<tr>'+
