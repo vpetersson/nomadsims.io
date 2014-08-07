@@ -34,17 +34,16 @@
       <p class="lead">Digital nomad traveling the world knows that roaming is for rookies. Real digital nomads use local SIM cards.</p>
       <p>The goal of this page is to create a crowd sourced database of the best (and worst) pre-paid SIM cards. To contribute, please open a Github Pull request.</p>
       <table class="table table-hover">
+      <thead>
         <tr>
           <th>Carrier</th>
           <th>Country</th>
           <th>Price</th>
           <th>Contract term</th>
         </tr>
-        <tr>
-          <td>T-Mobile</td>
-          <td>USA</td>
-        </tr>
-
+      </thead>
+      <tbody id="simtable">
+      </tbody>
       </table>
     </div>
 
@@ -53,6 +52,24 @@
         <p class="text-muted">&copy; <a href="http://viktorpetersson.com">Viktor Petersson</a>.</p>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script>
+$.ajax({url: '/simdb/db.json',
+    success: function(data, success) {
+        for (var i=0, a=data; i < a.plans.length; i++) {
+            $('#simtable').append('<tr>'+
+                    '<td>' + a.plans[i].carrier+'</td>'+
+                    '<td>' + a.plans[i].country+'</td>'+
+                    '<td>' + a.plans[i].price+'</td>'+
+                    '<td>' + a.plans[i].contract_terms+'</td>'+
+                    '</tr>');
+        }},
+    error: function() {
+        alert("Something went wrong!");
+    }
+});
+    </script>
   </body>
 </html>
 
