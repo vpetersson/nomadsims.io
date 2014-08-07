@@ -12,6 +12,33 @@
       "comment": "Including LTE."
     },
     {
+      "carrier": "T-Mobile",
+      "country": "USA",
+      "plan": "Individual",
+      "price": 70,
+      "contract_terms": "Per month",
+      "bandwidth": "5GB",
+      "comment": "Including LTE."
+    },
+    {
+      "carrier": "T-Mobile",
+      "country": "USA",
+      "plan": "Individual",
+      "price": 60,
+      "contract_terms": "Per month",
+      "bandwidth": "3GB",
+      "comment": "Including LTE."
+    },
+    {
+      "carrier": "T-Mobile",
+      "country": "USA",
+      "plan": "Individual",
+      "price": 50,
+      "contract_terms": "Per month",
+      "bandwidth": "1GB",
+      "comment": "including LTE."
+    },
+    {
       "carrier": "VIP",
       "country": "Croatia",
       "plan": "",
