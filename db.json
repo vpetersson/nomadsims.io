@@ -1,0 +1,10 @@
+{
+  'name': 'The SIM card database',
+  'plans':
+    {
+      'carrier': 'T-mobile',
+      'country': 'USA',
+      'price': 70,
+      'contract_terms', 'One month',
+    },
+}
