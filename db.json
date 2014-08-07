@@ -17,7 +17,7 @@
       "plan": "Individual",
       "price": 70,
       "contract_terms": "Per month",
-      "bandwidth": "5GB",
+      "bandwidth": "5 GB",
       "comment": "Including LTE."
     },
     {
@@ -35,8 +35,44 @@
       "plan": "Individual",
       "price": 50,
       "contract_terms": "Per month",
-      "bandwidth": "1GB",
+      "bandwidth": "1 GB",
       "comment": "including LTE."
+    },
+    {
+      "carrier": "Giff Gaff",
+      "country": "UK",
+      "plan": "",
+      "price": 5,
+      "contract_terms": "Per month",
+      "bandwidth": "0.02GB",
+      "comment": "SIM cards must be ordered online."
+    },
+    {
+      "carrier": "Giff Gaff",
+      "country": "UK",
+      "plan": "",
+      "price": 7.5,
+      "contract_terms": "Per month",
+      "bandwidth": "0.25 GB",
+      "comment": "SIM cards must be ordered online."
+    },
+    {
+      "carrier": "Giff Gaff",
+      "country": "UK",
+      "plan": "",
+      "price": 10,
+      "contract_terms": "Per month",
+      "bandwidth": "1 GB",
+      "comment": "SIM cards must be ordered online."
+    },
+    {
+      "carrier": "Giff Gaff",
+      "country": "UK",
+      "plan": "",
+      "price": 12,
+      "contract_terms": "Per month",
+      "bandwidth": "Unlimited",
+      "comment": "SIM cards must be ordered online."
     },
     {
       "carrier": "VIP",
