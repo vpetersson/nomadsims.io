@@ -5,13 +5,17 @@
     {
       "carrier": "T-Mobile",
       "country": "USA",
-      "price": 70,
+      "plan": "Individual",
+      "price": 80,
       "contract_terms": "Per month",
-      "comment": ""
+      "bandwidth": "Unlimited",
+      "comment": "Including LTE."
     },
     {
       "carrier": "VIP",
       "country": "Croatia",
+      "plan": "",
+      "bandwidth": "",
       "price": 10,
       "contract_terms": "Per day",
       "comment": ""

@@ -9,9 +9,9 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>NomadSIMs.io</title>
+    <title>NomadSIMs.io - A crowd sourced SIM card database.</title>
 
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 
@@ -21,21 +21,22 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
 
     <div class="container">
       <div class="page-header">
-        <h1>Nomadsims.io: A crowd sourced SIM card database.</h1>
+        <h1>A crowd sourced SIM card database.</h1>
       </div>
       <p class="lead">Digital nomad traveling the world knows that roaming is for rookies. Real digital nomads use local SIM cards.</p>
-      <p>The goal of this page is to create a crowd sourced database of the best (and worst) pre-paid SIM cards. To contribute, please check out the <a href="https://github.com/vpetersson/nomadsims.io">Github repo</a> and opena a Pull Request.</p>
+      <p>The goal of this page is to create a crowd sourced database of the best (and worst) pre-paid SIM cards. To contribute, please check out the <a href="https://github.com/vpetersson/nomadsims.io">Github repo</a> and open a Pull Request.</p>
       <table class="table table-hover">
       <thead>
         <tr>
           <th>Carrier</th>
+          <th>Plan</th>
           <th>Country</th>
           <th>Price*</th>
+          <th>Bandwidth</th>
           <th>Contract term</th>
           <th>Comment</th>
         </tr>
@@ -44,32 +45,38 @@
       </tbody>
       </table>
     <p>* Price in local currency.</p>
-    </div>
+  </div>
+  </p>
 
+    </div>
     <div class="footer">
       <div class="container">
-        <p class="text-muted">&copy; Nomadsims.io, by <a href="http://viktorpetersson.com">Viktor Petersson</a>.</p>
+        <p class="text-muted">&copy; Nomadsims.io by <a href="http://viktorpetersson.com">Viktor Petersson</a>.</p>
       </div>
     </div>
 
+    <!-- Populate the database -->
     <script>
-$.ajax({url: 'db.json',
-    success: function(data, success) {
+    $.ajax({url: 'db.json',
+      success: function(data, success) {
         for (var i=0, a=data; i < a.plans.length; i++) {
             $('#simtable').append('<tr>'+
                     '<td>' + a.plans[i].carrier+'</td>'+
+                    '<td>' + a.plans[i].plan+'</td>'+
                     '<td>' + a.plans[i].country+'</td>'+
                     '<td>' + a.plans[i].price+'</td>'+
+                    '<td>' + a.plans[i].bandwidth+'</td>'+
                     '<td>' + a.plans[i].contract_terms+'</td>'+
                     '<td>' + a.plans[i].comment+'</td>'+
                     '</tr>');
         }},
-    error: function() {
+      error: function() {
         alert("Something went wrong!");
-    }
-});
+      }
+    });
     </script>
   </body>
+
   <!-- Google Analytics -->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
