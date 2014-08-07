@@ -38,13 +38,15 @@
         <tr>
           <th>Carrier</th>
           <th>Country</th>
-          <th>Price</th>
+          <th>Price*</th>
           <th>Contract term</th>
+          <th>Comment</th>
         </tr>
       </thead>
       <tbody id="simtable">
       </tbody>
       </table>
+    <p>* Price in local currency.</p>
     </div>
 
     <div class="footer">
@@ -63,6 +65,7 @@ $.ajax({url: 'db.json',
                     '<td>' + a.plans[i].country+'</td>'+
                     '<td>' + a.plans[i].price+'</td>'+
                     '<td>' + a.plans[i].contract_terms+'</td>'+
+                    '<td>' + a.plans[i].comment+'</td>'+
                     '</tr>');
         }},
     error: function() {

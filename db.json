@@ -1,10 +1,20 @@
 {
   "name": "The SIM card database",
   "plans":
-    [{
-      "carrier": "T-mobile",
+  [
+    {
+      "carrier": "T-Mobile",
       "country": "USA",
       "price": 70,
-      "contract_terms": "One month"
-    }]
+      "contract_terms": "Per month",
+      "comment": ""
+    },
+    {
+      "carrier": "VIP",
+      "country": "Croatia",
+      "price": 10,
+      "contract_terms": "Per day",
+      "comment": ""
+    }
+  ]
 }
