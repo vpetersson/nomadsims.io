@@ -28,7 +28,7 @@
         <h1>A crowd sourced SIM card database</h1>
       </div>
       <p class="lead">Digital nomads traveling the world knows that roaming is for rookies. Real digital nomads use local SIM cards.</p>
-      <p>The goal of this page is to create a crowd sourced database of the best (and worst) pre-paid SIM cards. To contribute, please check out the <a href="https://github.com/vpetersson/nomadsims.io">Github repo</a> and open a Pull Request.</p>
+      <p>The goal of this page is to create a crowd sourced database of the best (and worst) pre-paid SIM cards.</p>
       <table class="table table-hover">
       <thead>
         <tr>
@@ -45,6 +45,8 @@
       </tbody>
       </table>
     <p>&#185; Price in local currency.</p>
+    <h3>How can I contribute?</h3>
+    <p>This entire website is backed by a Github repository. To contribute simply visit the <a href="https://github.com/vpetersson/nomadsims.io">repository</a>, add your data, and open a Pull Request.</p>
   </div>
   </p>
 
@@ -58,21 +60,25 @@
     <!-- Populate the database -->
     <script>
     $.ajax({url: 'db.json',
-      success: function(data, success) {
-        for (var i=0, a=data; i < a.plans.length; i++) {
-            $('#simtable').append('<tr>'+
-                    '<td>' + a.plans[i].carrier+'</td>'+
-                    '<td>' + a.plans[i].plan+'</td>'+
-                    '<td>' + a.plans[i].country+'</td>'+
-                    '<td>' + a.plans[i].price+'</td>'+
-                    '<td>' + a.plans[i].bandwidth+'</td>'+
-                    '<td>' + a.plans[i].contract_terms+'</td>'+
-                    '<td>' + a.plans[i].comment+'</td>'+
-                    '</tr>');
-        }},
-      error: function() {
-        alert("Something went wrong!");
-      }
+        success: function(data, success) {
+            var sorter = function(a, b) {
+                return a.country.toUpperCase().localeCompare(b.country.toUpperCase());
+            }
+            data.plans.sort(sorter);
+            for (var i=0, a=data; i < a.plans.length; i++) {
+                $('#simtable').append('<tr>'+
+                        '<td>' + a.plans[i].carrier+'</td>'+
+                        '<td>' + a.plans[i].plan+'</td>'+
+                        '<td>' + a.plans[i].country+'</td>'+
+                        '<td>' + a.plans[i].price+'</td>'+
+                        '<td>' + a.plans[i].bandwidth+'</td>'+
+                        '<td>' + a.plans[i].contract_terms+'</td>'+
+                        '<td>' + a.plans[i].comment+'</td>'+
+                        '</tr>');
+            }},
+        error: function() {
+            alert("Something went wrong!");
+        }
     });
     </script>
   </body>
