@@ -75,6 +75,15 @@
       "comment": "SIM cards must be ordered online."
     },
     {
+      "carrier": "Rogers",
+      "country": "Canada",
+      "plan": "Talk, Text and Internet 65",
+      "price": 65.75,
+      "contract_terms": "Per month",
+      "bandwidth": "1 GB",
+      "comment": ""
+    },
+    {
       "carrier": "VIP",
       "country": "Croatia",
       "plan": "",
